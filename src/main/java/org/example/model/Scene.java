@@ -18,4 +18,31 @@ public class Scene {
         this.flashes = flashes;
         this.cameras = cameras;
     }
+
+    public Scene( List<PoligonalModel> models, List<Camera> cameras) {
+        this.models = models;
+        this.cameras = cameras;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public <T> T method1(T t) {
+        return t;
+    }
+
+    public <T, U> T method2(T t, U u) {
+        return t;
+    }
+
+    @Override
+    public String toString() {
+        return "Scene{" +
+                "id=" + id +
+                ", models=" + models +
+                ", flashes=" + flashes +
+                ", cameras=" + cameras +
+                '}';
+    }
 }

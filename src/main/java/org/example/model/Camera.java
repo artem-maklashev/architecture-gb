@@ -9,7 +9,13 @@ public class Camera {
         this.angel = angel;
     }
 
-    public void rotate(Angle3D angle) {}
+    public void rotate(Angle3D angle) {
+        this.angel = angle;
+        System.out.println("Поворот камеры");
+    }
 
-    public void move(Point3D point) {}
+    public void move(Point3D point) {
+        this.location = point;
+        System.out.println("Перемещение камеры");
+    }
 }

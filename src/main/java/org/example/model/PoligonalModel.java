@@ -1,11 +1,12 @@
 package org.example.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PoligonalModel {
 
-    private List<Poligon> poligons;
-    private List<Texture> textures;
+    private List<Poligon> poligons = new ArrayList<>();
+    private List<Texture> textures = new ArrayList<>();
 
     public PoligonalModel(List<Poligon> poligons) {
         this.poligons = poligons;
@@ -16,11 +17,19 @@ public class PoligonalModel {
         this.textures = textures;
     }
 
-    public List<Poligon> getPoligons() {
-        return poligons;
+    public void setPoligons(List<Poligon> poligons) {
+        this.poligons = poligons;
     }
 
-    public List<Texture> getTextures() {
-        return textures;
+    public void setTextures(List<Texture> textures) {
+        this.textures = textures;
+    }
+
+    @Override
+    public String toString() {
+        return "PoligonalModel{" +
+                "poligons=" + poligons +
+                ", textures=" + textures +
+                '}';
     }
 }
