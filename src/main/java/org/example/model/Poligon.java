@@ -3,12 +3,7 @@ package org.example.model;
 import java.util.List;
 
 public class Poligon {
-    private static int counter = 5000;
 
-    {
-        counter = ++counter;
-    }
-    private int id;
     private List<Point3D> points;
 
     public Poligon(List<Point3D> points) {
