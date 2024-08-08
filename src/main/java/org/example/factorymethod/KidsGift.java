@@ -1,4 +1,4 @@
-package org.example.factorynethod;
+package org.example.factorymethod;
 
 public class KidsGift extends Gift{
     @Override
