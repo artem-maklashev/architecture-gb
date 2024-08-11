@@ -8,7 +8,7 @@ public abstract class Car {
     private Color color;//TODO
     protected CarType type;
     private int wheelsCount;
-    private FuelType fuelType;
+    protected FuelType fuelType;
     private GearboxType gearboxType;
     private double engineCapacity;
     private boolean fogLights = false;
@@ -22,6 +22,13 @@ public abstract class Car {
     public boolean switchFogLights(){
         fogLights =!fogLights;
         return fogLights;
+    }
+    protected void setWheelsCount(int wheelsCount){
+        this.wheelsCount = wheelsCount;
+    }
+
+    public int getWheelsCount() {
+        return wheelsCount;
     }
     //endregion
 
