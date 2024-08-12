@@ -1,17 +1,22 @@
 package org.example;
 
+import org.example.homework.WashingStation;
+
 import java.awt.*;
 
 public abstract class Car {
-    private String trademark;
-    private String model;
-    private Color color;//TODO
+    private final String trademark;
+    private final String model;
+    private final Color color;
     protected CarType type;
     private int wheelsCount;
     protected FuelType fuelType;
     private GearboxType gearboxType;
     private double engineCapacity;
     private boolean fogLights = false;
+
+    protected RefuelingStation refuelingStation;
+    protected WashingStation washingStation;
 
     //region Public Methods:
     public abstract void move();
@@ -28,8 +33,28 @@ public abstract class Car {
     }
 
     public int getWheelsCount() {
-        return wheelsCount;
+        return wheelsCount;    }
+
+    public String getTrademark() {
+        return trademark;
     }
+
+    public String getModel() {
+        return model;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setRefuelingStation(RefuelingStation refuelingStation) {
+        this.refuelingStation = refuelingStation;
+    }
+
+    public void setWashingStation(WashingStation washingStation) {
+        this.washingStation = washingStation;
+    }
+
     //endregion
 
     //region Constructors:
