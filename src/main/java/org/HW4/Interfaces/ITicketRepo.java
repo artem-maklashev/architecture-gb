@@ -1,6 +1,7 @@
 package org.HW4.Interfaces;
 
-import Models.Ticket;
+
+import org.HW4.Models.Ticket;
 
 import java.util.List;
 

@@ -1,8 +1,9 @@
 package org.HW4.Core;
 
-import Interfaces.ITicketRepo;
-import Models.Ticket;
-import Services.TicketRepository;
+
+import org.HW4.Interfaces.ITicketRepo;
+import org.HW4.Models.Ticket;
+import org.HW4.Services.TicketRepository;
 
 import java.util.List;
 

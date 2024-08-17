@@ -1,8 +1,8 @@
 package org.HW4.Core;
 
-import Interfaces.IUserRepo;
-import Models.User;
-import Services.UserRepository;
+import org.HW4.Interfaces.IUserRepo;
+import org.HW4.Models.User;
+import org.HW4.Services.UserRepository;
 
 import java.util.List;
 

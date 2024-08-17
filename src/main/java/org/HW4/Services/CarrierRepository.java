@@ -1,7 +1,9 @@
 package org.HW4.Services;
 
-import Interfaces.ICarrierRepo;
-import Models.Carrier;
+
+
+import org.HW4.Interfaces.ICarrierRepo;
+import org.HW4.Models.Carrier;
 
 import java.util.ArrayList;
 import java.util.List;

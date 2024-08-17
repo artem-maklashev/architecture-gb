@@ -1,8 +1,9 @@
 package org.HW4.Core;
 
-import Interfaces.ICustomer;
-import Models.Ticket;
-import Models.User;
+
+import org.HW4.Interfaces.ICustomer;
+import org.HW4.Models.Ticket;
+import org.HW4.Models.User;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -66,7 +67,7 @@ public class Customer implements ICustomer {
         return flag;
     }
 
-    @Override
+        @Override
     public List<Ticket> searchTicket(Date date, int route) throws RuntimeException {
         List<Ticket> result = new ArrayList<>();
         var list = ticketProvider.getTickets(route);

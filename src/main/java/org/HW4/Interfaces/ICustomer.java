@@ -1,8 +1,10 @@
 package org.HW4.Interfaces;
 
-import Core.UserProvider;
-import Models.Ticket;
-import Models.User;
+
+
+import org.HW4.Core.UserProvider;
+import org.HW4.Models.Ticket;
+import org.HW4.Models.User;
 
 import java.util.Date;
 import java.util.List;

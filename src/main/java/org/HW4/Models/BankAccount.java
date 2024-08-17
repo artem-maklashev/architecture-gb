@@ -8,7 +8,7 @@ import javax.smartcardio.Card;
 public class BankAccount {
 
     private int balance;
-    private Card card;
+    private Long card;
 
 
     public BankAccount() {
@@ -21,5 +21,17 @@ public class BankAccount {
                 " card= " + (String.format("%016d", card)) +
                 ", balance= " + balance +
                 " }";
+    }
+
+    public long getCard() {
+        return card;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int i) {
+        balance = i;
     }
 }

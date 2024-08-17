@@ -1,7 +1,8 @@
 package org.HW4.ClientApplication;
 
-import Core.UserProvider;
-import Models.User;
+
+import org.HW4.Core.UserProvider;
+import org.HW4.Models.User;
 
 /**
  * Класс аутентификации пользователя

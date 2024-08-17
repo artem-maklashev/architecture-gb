@@ -1,11 +1,10 @@
 package org.HW4.ClientApplication;
 
-import Core.Customer;
-import Interfaces.ICustomer;
-import Models.Ticket;
+
+import org.HW4.Core.Customer;
+import org.HW4.Interfaces.ICustomer;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * Основной класс клиентского приложения.
@@ -113,7 +112,7 @@ public class Start extends EnterData {
         long cardNumber = inputLong(1L, 9999_9999_9999_9999L);
         System.out.println("=====================================================================================");
         System.out.print("Register the system... ");
-        customer = new Customer();
+        customer =  new Customer();
         int id;
         try {
             id = customer.getUserProvider().createClient(userName, passwordHash, cardNumber);

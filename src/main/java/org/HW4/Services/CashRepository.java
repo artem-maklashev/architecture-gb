@@ -1,7 +1,8 @@
 package org.HW4.Services;
 
-import Interfaces.ICashRepo;
-import Models.BankAccount;
+
+import org.HW4.Interfaces.ICashRepo;
+import org.HW4.Models.BankAccount;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -45,4 +45,12 @@ public class User {
     public int hashCode() {
         return Objects.hash(id, userName, hashPassword, cardNumber);
     }
+
+    public Object getUserName() {
+        return userName;
+    }
+
+    public int getId() {
+        return id;
+    }
 }

@@ -1,6 +1,7 @@
 package org.HW4.Interfaces;
 
-import Models.Carrier;
+
+import org.HW4.Models.Carrier;
 
 /**
  * Интерфейс взаимодействия с базой перевозчиков

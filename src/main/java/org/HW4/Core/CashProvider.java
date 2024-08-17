@@ -1,12 +1,12 @@
 package org.HW4.Core;
 
-import Interfaces.ICarrierRepo;
-import Interfaces.ICashRepo;
-import Models.Carrier;
-import Models.Ticket;
-import Models.User;
-import Services.CarrierRepository;
-import Services.CashRepository;
+import org.HW4.Interfaces.ICarrierRepo;
+import org.HW4.Interfaces.ICashRepo;
+import org.HW4.Models.Carrier;
+import org.HW4.Models.Ticket;
+import org.HW4.Models.User;
+import org.HW4.Services.CarrierRepository;
+import org.HW4.Services.CashRepository;
 
 /**
  * Класс - провайдер для взаимодействия с банком и базой перевозчиков

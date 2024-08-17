@@ -1,6 +1,7 @@
 package org.HW4.Interfaces;
 
-import Models.User;
+
+import org.HW4.Models.User;
 
 import java.util.List;
 
