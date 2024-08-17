@@ -3,8 +3,10 @@ package org.HW4.ClientApplication;
 
 import org.HW4.Core.Customer;
 import org.HW4.Interfaces.ICustomer;
+import org.HW4.Models.Ticket;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Основной класс клиентского приложения.
@@ -68,7 +70,7 @@ public class Start extends EnterData {
     }
 
     /**
-     * Меню входа зарегестрированного пользователя
+     * Меню входа зарегистрированного пользователя
      */
     private void login() {
         printMessageLine("This is a test version. The data base is not available in full mode.");

@@ -81,9 +81,9 @@ public class TicketRepository implements ITicketRepo {
         return false;
     }
 
-    private void generateTickets(int roureNumber, int countPlaces, int price, Date date) {
+    private void generateTickets(int routeNumber, int countPlaces, int price, Date date) {
         for (int i = 1; i <= countPlaces; i++) {
-            tickets.add(new Ticket(roureNumber, i, price, date, true));
+            tickets.add(new Ticket(routeNumber, i, price, date, true));
         }
     }
 }

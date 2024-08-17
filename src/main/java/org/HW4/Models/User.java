@@ -53,4 +53,12 @@ public class User {
     public int getId() {
         return id;
     }
+
+    public int getHashPassword() {
+        return hashPassword;
+    }
+
+    public long getCardNumber() {
+        return cardNumber;
+    }
 }

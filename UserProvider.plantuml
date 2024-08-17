@@ -1,0 +1,188 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class Authentication {
+  + authentication(UserProvider, String, int): User
+}
+class BankAccount {
+  - balance: int
+  - card: Long
+  + toString(): String
+   balance: int
+   card: long
+}
+class Carrier {
+  - cardNumber: long
+  - id: int
+   id: int
+   cardNumber: long
+}
+class CarrierRepository {
+  - carrierRepository: CarrierRepository
+  + read(int): Carrier
+   carrierRepository: CarrierRepository
+}
+class CashProvider {
+  + buy(Ticket): boolean
+  + authorization(User): void
+}
+class CashRepository {
+  - clients: List<BankAccount>
+  - cashRepository: CashRepository
+  + transaction(int, long, long): boolean
+   cashRepository: CashRepository
+   clients: List<BankAccount>
+}
+class Customer {
+  - selectedTickets: List<Ticket>
+  - userProvider: UserProvider
+  + searchTicket(Date, int): List<Ticket>
+  + buyTicket(Ticket): boolean
+   selectedTickets: List<Ticket>
+   userProvider: UserProvider
+   user: User
+}
+class EnterData {
+  # inputLong(long, long): long
+  # inputDate(): Date
+  # inputString(): String
+  # inputInt(int, int): int
+}
+interface ICarrierRepo << interface >> {
+  + read(int): Carrier
+}
+interface ICashRepo << interface >> {
+  + transaction(int, long, long): boolean
+}
+interface ICustomer << interface >> {
+  + buyTicket(Ticket): boolean
+  + searchTicket(Date, int): List<Ticket>
+   selectedTickets: List<Ticket>
+   userProvider: UserProvider
+   user: User
+}
+interface ITicketRepo << interface >> {
+  + readAll(int): List<Ticket>
+  + delete(Ticket): boolean
+  + create(Ticket): boolean
+  + update(Ticket): boolean
+}
+interface IUserRepo << interface >> {
+  + delete(User): boolean
+  + create(String, int, long): int
+  + read(int): User
+  + readAll(): List<User>
+  + update(User): boolean
+  + read(String): User
+}
+class Main {
+  + main(String[]): void
+}
+class Start {
+  - runBuyingMenu(): void
+  + runLoginRegisterMenu(): void
+  - buyTicketMenuConfirmLogic(String): void
+  - runSelectDate(): Date?
+  - runSelectRouteMenu(): int
+  - printMessageLine(String): void
+  - runBuyingMenuChoiceLogic(int): boolean
+  - buyTicketMenu(): void
+  - runLoginRegisterMenuChoiceLogic(int): boolean
+  - login(): void
+  - register(): void
+  - printAllTickets(List<Ticket>): void
+}
+class Ticket {
+  - price: int
+  - isValid: boolean
+  - date: Date
+  - routeNumber: int
+  - place: int
+  + toPrint(): String
+  + isValid(): boolean
+  + hashCode(): int
+  + toString(): String
+  + equals(Object): boolean
+  + equals(Ticket): boolean
+   routeNumber: int
+   place: int
+   isValid: boolean
+   price: int
+   date: Date
+}
+class TicketProvider {
+  + updateTicketStatus(Ticket): boolean
+  + getTickets(int): List<Ticket>
+}
+class TicketRepository {
+  - ticketRepository: TicketRepository
+  + update(Ticket): boolean
+  + create(Ticket): boolean
+  - generateTickets(int, int, int, Date): void
+  + readAll(int): List<Ticket>
+  + delete(Ticket): boolean
+   ticketRepository: TicketRepository
+}
+class User {
+  - userName: String
+  - hashPassword: int
+  - cardNumber: long
+  - id: int
+  + hashCode(): int
+  + equals(User): boolean
+  + toString(): String
+  + equals(Object): boolean
+   id: int
+   userName: Object
+   hashPassword: int
+   cardNumber: long
+}
+class UserProvider {
+  + createClient(String, int, long): int
+  + getClientByName(String): User
+   allClients: List<User>
+}
+class UserRepository {
+  - clientRepository: UserRepository
+  + read(int): User
+  + read(String): User
+  + create(String, int, long): int
+  + delete(User): boolean
+  + update(User): boolean
+  + readAll(): List<User>
+   clientRepository: UserRepository
+}
+
+CarrierRepository "1" *-[#595959,plain]-> "carriers\n*" Carrier           
+CarrierRepository  -[#595959,dashed]->  Carrier           : "«create»"
+CarrierRepository  -[#008200,dashed]-^  ICarrierRepo      
+CashProvider      "1" *-[#595959,plain]-> "carrierRepository\n1" ICarrierRepo      
+CashProvider      "1" *-[#595959,plain]-> "cashRepository\n1" ICashRepo         
+CashRepository     -[#595959,dashed]->  BankAccount       : "«create»"
+CashRepository    "1" *-[#595959,plain]-> "clients\n*" BankAccount       
+CashRepository     -[#008200,dashed]-^  ICashRepo         
+Customer           -[#595959,dashed]->  CashProvider      : "«create»"
+Customer          "1" *-[#595959,plain]-> "cashProvider\n1" CashProvider      
+Customer           -[#008200,dashed]-^  ICustomer         
+Customer          "1" *-[#595959,plain]-> "selectedTickets\n*" Ticket            
+Customer           -[#595959,dashed]->  TicketProvider    : "«create»"
+Customer          "1" *-[#595959,plain]-> "ticketProvider\n1" TicketProvider    
+Customer          "1" *-[#595959,plain]-> "client\n1" User              
+Customer           -[#595959,dashed]->  UserProvider      : "«create»"
+Customer          "1" *-[#595959,plain]-> "userProvider\n1" UserProvider      
+Main               -[#595959,dashed]->  Start             : "«create»"
+Start              -[#595959,dashed]->  Customer          : "«create»"
+Start              -[#000082,plain]-^  EnterData         
+Start             "1" *-[#595959,plain]-> "customer\n1" ICustomer         
+TicketProvider    "1" *-[#595959,plain]-> "ticketRepo\n1" ITicketRepo       
+TicketRepository   -[#008200,dashed]-^  ITicketRepo       
+TicketRepository   -[#595959,dashed]->  Ticket            : "«create»"
+TicketRepository  "1" *-[#595959,plain]-> "tickets\n*" Ticket            
+UserProvider      "1" *-[#595959,plain]-> "clientRepository\n1" IUserRepo         
+UserRepository     -[#008200,dashed]-^  IUserRepo         
+UserRepository    "1" *-[#595959,plain]-> "clients\n*" User              
+UserRepository     -[#595959,dashed]->  User              : "«create»"
+@enduml
