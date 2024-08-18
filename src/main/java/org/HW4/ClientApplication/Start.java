@@ -2,6 +2,8 @@ package org.HW4.ClientApplication;
 
 
 import org.HW4.Core.Customer;
+import org.HW4.Core.StationProvider;
+import org.HW4.Core.TicketProvider;
 import org.HW4.Interfaces.ICustomer;
 import org.HW4.Models.Ticket;
 
@@ -16,6 +18,7 @@ public class Start extends EnterData {
     private ICustomer customer;
     private int ticketRouteNumber;
     private Date ticketDate;
+    private StationProvider stationProvider = new StationProvider(new TicketProvider());
 
     /**
      * Метод запуска меню входа и регистрации
@@ -52,7 +55,7 @@ public class Start extends EnterData {
                 if (customer.getUser() == null) {
                     break;
                 } else {
-                    runBuyingMenu();
+                    runSelectMenu();
                     break;
                 }
             case 2:
@@ -114,7 +117,7 @@ public class Start extends EnterData {
         long cardNumber = inputLong(1L, 9999_9999_9999_9999L);
         System.out.println("=====================================================================================");
         System.out.print("Register the system... ");
-        customer =  new Customer();
+        customer = new Customer();
         int id;
         try {
             id = customer.getUserProvider().createClient(userName, passwordHash, cardNumber);
@@ -161,7 +164,6 @@ public class Start extends EnterData {
     private boolean runBuyingMenuChoiceLogic(int choice) {
         switch (choice) {
             case 1:
-                ticketRouteNumber = runSelectRouteMenu();
                 if (ticketRouteNumber > 0) {
                     ticketDate = runSelectDate();
                     if (ticketDate != null) {
@@ -281,4 +283,95 @@ public class Start extends EnterData {
         System.out.println(message);
         System.out.println("=====================================================================================");
     }
+
+    /**
+     * Меню выбора между покупкой и проверкой билета на станции
+     */
+    private void runSelectMenu() {
+        printMessageLine("Select what do you want " + customer.getUser().getUserName() + " |");
+        boolean run = true;
+        while (run) {
+            printMessageLine("Select what do you want " + customer.getUser().getUserName() + "\t\t |");
+            printMessageLine("To select  buying tickets\t\t\tenter 0\n" +
+                    "To check ticket\t\t\t\t\t\t\t\t\t\tenter 1");
+            System.out.print("Enter your choice > ");
+            int choice = 0;
+            try {
+                choice = inputInt(0, 1);
+            } catch (RuntimeException ex) {
+                System.out.println("==============================================================================" +
+                        "=======");
+                printMessageLine(ex.getMessage());
+                continue;
+            }
+            System.out.println("=====================================================================================");
+            run = runTicketChoiceLogic(choice);
+        }
+    }
+
+    /**
+     * Обработка выбора пользователя между покупкой билетов и проверкой на станции
+     * @param choice
+     * @return
+     */
+    private boolean runTicketChoiceLogic(int choice) {
+        switch (choice) {
+            case 0:
+                runBuyingMenu();
+                return true;
+            case 1:
+                int ticketRouteNumber = runSelectRouteMenu();
+                Date date = runSelectDate();
+                if (date != null) {
+                    try {
+                        customer.setSelectedTickets(customer.searchTicket(date, ticketRouteNumber));
+                    } catch (RuntimeException ex) {
+                        printMessageLine(ex.getMessage());
+                        return true;
+                    }
+                    printAllTickets(customer.getSelectedTickets());
+                    showTicketMenu();
+
+                    return true;
+                    //return;
+                }
+                return true;
+
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * Меню выбора билета для предъявления
+     */
+    private void showTicketMenu() {
+        int ticketsCount = customer.getSelectedTickets().size();
+        printMessageLine(customer.getUser().getUserName() + " have " +
+                ticketsCount + "tickets, Select number: " + " |");
+        boolean run = true;
+        while (run) {
+            int choice = 0;
+            printMessageLine("Select ticket number" + "|");
+            System.out.print("Enter your choice > ");
+            try {
+                choice = inputInt(1, ticketsCount);
+            } catch (RuntimeException ex) {
+                System.out.println("==============================================================================" +
+                        "=======");
+                printMessageLine(ex.getMessage());
+                continue;
+            }
+            System.out.println("=====================================================================================");
+            run = stationProvider.checkTicket(customer.getSelectedTickets().get(choice -1));
+            if (run) {
+                System.out.println("Проезд разрешен");
+                runSelectMenu();
+            }
+        }
+    }
 }
+
+
+
+

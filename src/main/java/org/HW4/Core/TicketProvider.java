@@ -38,7 +38,7 @@ public class TicketProvider {
      * @return результат выполнения операции
      */
     public boolean updateTicketStatus(Ticket ticket) {
-        //ticket.setValid(false);
+        ticket.setValid(false);
         return ticketRepo.update(ticket);
     }
 

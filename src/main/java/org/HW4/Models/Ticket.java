@@ -91,4 +91,8 @@ public class Ticket{
     public boolean getValid() {
         return isValid;
     }
+
+    public void setValid(boolean b) {
+        isValid = b;
+    }
 }
