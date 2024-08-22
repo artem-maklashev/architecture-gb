@@ -20,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="sem4" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,7 +50,6 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "sem4",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/Программирование/java/architecture-gb",
     "node.js.detected.package.eslint": "true",
@@ -110,6 +109,7 @@
       <workItem from="1723912545370" duration="6851000" />
       <workItem from="1723922085896" duration="63000" />
       <workItem from="1723959515931" duration="6952000" />
+      <workItem from="1724337318657" duration="3336000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <option name="closed" value="true" />
