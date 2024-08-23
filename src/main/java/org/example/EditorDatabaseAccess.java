@@ -28,8 +28,8 @@ public class EditorDatabaseAccess implements DatabaseAccess {
                 textures.add((Texture) entity);
 
             }
-            return textures;
         }
+        return textures;
     }
 
     @Override
