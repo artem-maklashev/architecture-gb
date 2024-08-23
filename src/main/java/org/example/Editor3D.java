@@ -53,7 +53,7 @@ public class Editor3D implements UILayer {
 
         ArrayList<Model3D> models = (ArrayList<Model3D>) buisinessLayer.getAllModels();
         for (int i = 0; i < models.size(); i++) {
-            System.out.printf("===%d===", i);
+            System.out.printf("===%d===\n", i);
             System.out.println(models.get(i));
             for (Texture texture : models.get(i).getTextures()) {
                 System.out.printf("\t%s\n", texture);
