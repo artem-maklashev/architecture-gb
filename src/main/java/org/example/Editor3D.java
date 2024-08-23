@@ -12,7 +12,7 @@ public class Editor3D implements UILayer {
     private void initialize() {
         database = new EditorDatabase(file);
         databaseAccessLayer = new EditorDatabaseAccess(database);
-        businessLayer = new EditorBusinessLogicalLayer(databaseAccessLayer);
+        buisinessLayer = new EditorBusinessLogicalLayer(databaseAccessLayer);
 
     }
 
