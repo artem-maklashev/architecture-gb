@@ -4,10 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="adf1598b-5fe2-4447-8bd3-97f710d6c190" name="Changes" comment="sem 5 init">
+    <list default="true" id="adf1598b-5fe2-4447-8bd3-97f710d6c190" name="Changes" comment="sem6 init">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/database/NotesDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/database/NotesRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/database/NotesTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/application/ConcreteNoteEditor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/application/interfaces/Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/application/interfaces/NoteEditor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/application/interfaces/NotesDatabaseContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/application/interfaces/NotesPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/domain/Note.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/infrastructure/persistance/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/infrastructure/persistance/DbContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/infrastructure/persistance/ModelConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/infrastructure/persistance/NotesDbContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/infrastructure/persistance/configurations/NoteConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/presentation/queries/controllers/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/presentation/queries/controllers/NotesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/presentation/queries/views/NotesConsolePresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notes/core/presentation/queries/views/Presenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Editor3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Editor3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +75,7 @@
     "Application.org.example.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "sem5",
+    "git-widget-placeholder": "sem6",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/Программирование/java/architecture-gb",
     "node.js.detected.package.eslint": "true",
@@ -94,6 +112,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -159,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724341241126</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="sem6 init">
+      <option name="closed" value="true" />
+      <created>1724568913357</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1724568913357</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +209,7 @@
     <MESSAGE value="add diagram and start app" />
     <MESSAGE value="done" />
     <MESSAGE value="sem 5 init" />
-    <option name="LAST_COMMIT_MESSAGE" value="sem 5 init" />
+    <MESSAGE value="sem6 init" />
+    <option name="LAST_COMMIT_MESSAGE" value="sem6 init" />
   </component>
 </project>
