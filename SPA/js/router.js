@@ -6,10 +6,10 @@ const route = (event) => {
   };
   
   const routes = {
-    404: "./404.html", // Путь к странице 404
-    "/": "./pages/home.html", // Путь к главной странице
-    "/contacts": "./pages/contacts.html", // Путь к странице контактов
-    "/about": "../pages/about.html" // Путь к странице "О нас"
+    404: './pages/404.html', // Путь к странице 404
+    '/': './pages/home.html', // Путь к главной странице
+    '/contacts': './pages/contacts.html', // Путь к странице контактов
+    '/about': './pages/about.html' // Путь к странице "О нас"
   };
   
   const handleLocation = async () => {
