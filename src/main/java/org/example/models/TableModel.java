@@ -5,6 +5,7 @@ import org.example.presenter.Model;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 public class TableModel implements Model {
 
@@ -23,15 +24,35 @@ public class TableModel implements Model {
         return tables;
     }
 
+
     @Override
     public int reservationTable(Date reservDate, int tableNumber, String name) {
         for (Table table : tables) {
             if (table.getId() == tableNumber) {
                 Reservation re = new Reservation(name, reservDate, table);
-                table.getResevations().add(re);
+                table.getReservations().add(re);
                 return re.getId();
             }
         }
         return -1;
     }
+
+    @Override
+    public int changeReservationTable(int orderId, Date orderDate, int tableId, String name) {
+
+        for (Table table : tables) {
+            boolean hasReservation = table.getReservations().stream()
+                    .anyMatch(reservation -> reservation.getId() == orderId);
+
+            if (hasReservation) {
+                boolean removed = table.getReservations().removeIf(reservation -> reservation.getId() == orderId);
+                if (removed) {
+                    return reservationTable(orderDate, tableId, name);
+                }
+            }
+        }
+        return -1;
+    }
+
+
 }

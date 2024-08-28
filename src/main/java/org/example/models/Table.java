@@ -6,15 +6,15 @@ import java.util.Collection;
 public class Table {
     private static int counter;
     private final int id;
-    private final Collection<Reservation> resevations = new ArrayList<>();
+    private final Collection<Reservation> reservations = new ArrayList<>();
     { id = ++counter;}
 
     public int getId() {
         return id;
     }
 
-    public Collection<Reservation> getResevations() {
-        return resevations;
+    public Collection<Reservation> getReservations() {
+        return reservations;
     }
 
     @Override
