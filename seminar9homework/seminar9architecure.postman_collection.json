@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "cccc06fb-ca5b-4791-8deb-4ef74f32db2b",
+		"name": "seminar9architecure",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29440876"
+	},
+	"item": [
+		{
+			"name": "Add forecast",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/weather?date=2024-08-30&temperatureCelsius=25",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-08-30"
+						},
+						{
+							"key": "temperatureCelsius",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update forecast",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/weather?date=2024-08-30&temperatureCelsius=23",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-08-30"
+						},
+						{
+							"key": "temperatureCelsius",
+							"value": "23"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete forecast",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/weather?date=2024-08-30&temperatureCelsius=23",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-08-30"
+						},
+						{
+							"key": "temperatureCelsius",
+							"value": "23"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get forecast",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/weather?start_date=2024-08-29&end_date=2024-08-31",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2024-08-29"
+						},
+						{
+							"key": "end_date",
+							"value": "2024-08-31"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
