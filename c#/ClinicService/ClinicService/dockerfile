@@ -1,0 +1,19 @@
+# Используем официальный образ MySQL версии 8.0
+FROM mysql:8.0
+
+# Устанавливаем переменные окружения для MySQL
+ENV MYSQL_ROOT_PASSWORD=402986
+ENV MYSQL_DATABASE=Clinic
+
+
+# Копируем файл с начальной схемой базы данных и данными в контейнер
+# (если у вас есть скрипты для инициализации, поместите их в папку /docker-entrypoint-initdb.d/)
+#COPY ./init.sql /docker-entrypoint-initdb.d/
+
+VOLUME /var/lib/mysql
+
+# Экспонируем порт 3306
+EXPOSE 3306
+
+# Устанавливаем команду по умолчанию для запуска MySQL
+CMD ["mysqld"]
