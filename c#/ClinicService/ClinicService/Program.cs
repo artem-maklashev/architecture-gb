@@ -10,13 +10,15 @@ namespace ClinicService
         public static void Main(string[] args)
         {
 
-            ConfigureMySqlConnection();
+            //ConfigureMySqlConnection();
 
 
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
             builder.Services.AddScoped<IClientRepository, ClientRepository>();
+            builder.Services.AddScoped<IPetRepository, PetRepository>();
+            builder.Services.AddScoped<IConsultationRepository, ConsultationRepository>();
 
             builder.Services.AddControllers();
 
@@ -57,33 +59,33 @@ namespace ClinicService
             cmd.CommandText = "DROP TABLE IF EXISTS Consultations";
             cmd.ExecuteNonQuery();
 
-            cmd.CommandText = "DROP TABLE IF EXISTS Pets";
-            cmd.ExecuteNonQuery();
+            //cmd.CommandText = "DROP TABLE IF EXISTS Pets";
+            //cmd.ExecuteNonQuery();
 
-            cmd.CommandText = "DROP TABLE IF EXISTS Clients";
-            cmd.ExecuteNonQuery();
+            //cmd.CommandText = "DROP TABLE IF EXISTS Clients";
+            //cmd.ExecuteNonQuery();
 
-            cmd.CommandText =
-                @"CREATE TABLE Clients(CLientId INTEGER AUTO_INCREMENT PRIMARY KEY,
-                Document TEXT,
-                SurName TEXT,                
-                FirstName TEXT,
-                Patronymic TEXT,
-                Birthday BIGINT)";
-            cmd.ExecuteNonQuery();
+            //cmd.CommandText =
+            //    @"CREATE TABLE Clients(CLientId INTEGER AUTO_INCREMENT PRIMARY KEY,
+            //    Document TEXT,
+            //    SurName TEXT,                
+            //    FirstName TEXT,
+            //    Patronymic TEXT,
+            //    Birthday BIGINT)";
+            //cmd.ExecuteNonQuery();
             cmd.CommandText =
                 @"CREATE TABLE Consultations(ConsultationId INTEGER AUTO_INCREMENT PRIMARY KEY,
                 ClientID INTEGER,
                 PetId INTEGER,
-                ConsultationDate INTEGER,
+                ConsultationDate BIGINT,
                 Description TEXT)";
             cmd.ExecuteNonQuery();
-            cmd.CommandText =
-                @"CREATE TABLE Pets(PetID INTEGER AUTO_INCREMENT PRIMARY KEY,
-                ClientID INTEGER,
-                Name TEXT,
-                Birthday BIGINT)";
-            cmd.ExecuteNonQuery();
+            //cmd.CommandText =
+            //    @"CREATE TABLE Pets(PetID INTEGER AUTO_INCREMENT PRIMARY KEY,
+            //    ClientID INTEGER,
+            //    Name TEXT,
+            //    Birthday BIGINT)";
+            //cmd.ExecuteNonQuery();
         }
     }
 }
