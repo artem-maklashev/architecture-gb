@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Программирование\\c#\\seminar10\\ClinicService\\ClinicService\\ClinicService.csproj": {}
+    "E:\\Программирование\\java\\architecture-gb\\c#\\ClinicService\\ClinicService\\ClinicService.csproj": {}
   },
   "projects": {
-    "E:\\Программирование\\c#\\seminar10\\ClinicService\\ClinicService\\ClinicService.csproj": {
+    "E:\\Программирование\\java\\architecture-gb\\c#\\ClinicService\\ClinicService\\ClinicService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Программирование\\c#\\seminar10\\ClinicService\\ClinicService\\ClinicService.csproj",
+        "projectUniqueName": "E:\\Программирование\\java\\architecture-gb\\c#\\ClinicService\\ClinicService\\ClinicService.csproj",
         "projectName": "ClinicService",
-        "projectPath": "E:\\Программирование\\c#\\seminar10\\ClinicService\\ClinicService\\ClinicService.csproj",
+        "projectPath": "E:\\Программирование\\java\\architecture-gb\\c#\\ClinicService\\ClinicService\\ClinicService.csproj",
         "packagesPath": "C:\\Users\\makla\\.nuget\\packages\\",
-        "outputPath": "E:\\Программирование\\c#\\seminar10\\ClinicService\\ClinicService\\obj\\",
+        "outputPath": "E:\\Программирование\\java\\architecture-gb\\c#\\ClinicService\\ClinicService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

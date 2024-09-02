@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iY9nsZJNEmk=",
+  "dgSpecHash": "IDxVslszQKE=",
   "success": true,
-  "projectFilePath": "E:\\Программирование\\c#\\seminar10\\ClinicService\\ClinicService\\ClinicService.csproj",
+  "projectFilePath": "E:\\Программирование\\java\\architecture-gb\\c#\\ClinicService\\ClinicService\\ClinicService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\makla\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\makla\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",
