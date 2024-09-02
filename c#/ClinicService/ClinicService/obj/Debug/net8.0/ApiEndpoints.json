@@ -77,5 +77,163 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicService.Controllers.ConsiltationsController",
+    "Method": "Create",
+    "RelativePath": "api/Consultations/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createConsultationRequest",
+        "Type": "ClinicService.Models.Requests.CreateConsultationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicService.Controllers.ConsiltationsController",
+    "Method": "DeleteById",
+    "RelativePath": "api/Consultations/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicService.Controllers.ConsiltationsController",
+    "Method": "GetById",
+    "RelativePath": "api/Consultations/geConsultationById/{ConsultationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ConsultationId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicService.Controllers.ConsiltationsController",
+    "Method": "GetAll",
+    "RelativePath": "api/Consultations/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicService.Controllers.ConsiltationsController",
+    "Method": "Update",
+    "RelativePath": "api/Consultations/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateConsultationRequest",
+        "Type": "ClinicService.Models.Requests.UpdateConsultationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicService.Controllers.PetController",
+    "Method": "Create",
+    "RelativePath": "api/Pets/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createPet",
+        "Type": "ClinicService.Models.Requests.CreatePetRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicService.Controllers.PetController",
+    "Method": "DeleteById",
+    "RelativePath": "api/Pets/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicService.Controllers.PetController",
+    "Method": "GetAll",
+    "RelativePath": "api/Pets/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicService.Controllers.PetController",
+    "Method": "GetById",
+    "RelativePath": "api/Pets/getPetById/{PetId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PetId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ClinicService.Controllers.PetController",
+    "Method": "Update",
+    "RelativePath": "api/Pets/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updatePet",
+        "Type": "ClinicService.Models.Requests.UpdatePetRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
