@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\c#",
-    "\\c#\\ClinicService"
+    ""
   ],
-  "SelectedNode": "\\c#\\ClinicService\\ClinicService.sln",
+  "SelectedNode": "\\ClinicService.sln",
   "PreviewInSolutionExplorer": false
 }
