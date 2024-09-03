@@ -40,3 +40,8 @@ build/
 /.idea/material_theme_project_new.xml
 /.idea/misc.xml
 /.idea/vcs.xml
+c#/ClinicService/ClinicService/obj/Debug/net8.0/ClinicService.AssemblyInfoInputs.cache
+c#/ClinicService/ClinicService/obj/Debug/net8.0/ClinicService.AssemblyInfo.cs
+c#/ClinicService/ClinicService/obj/Debug/net8.0/ClinicService.AssemblyInfoInputs.cache
+/c#/ClinicService/.vs/ClinicService/FileContentIndex/2ca437e1-1e95-4df8-8da7-8e1202bc3e10.vsidx
+/.gitignore
