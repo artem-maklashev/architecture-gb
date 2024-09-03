@@ -1,7 +1,9 @@
-﻿using ClinicService.Models.Requests;
+﻿using ClinicService.Models;
+using ClinicService.Models.Requests;
 using ClinicService.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace ClinicService.Controllers
 {
@@ -17,8 +19,9 @@ namespace ClinicService.Controllers
         }
 
         [HttpPost("create")]
+        [SwaggerOperation(OperationId = "ClientCreate")]
         //[ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
-        public IActionResult Create([FromBody] CreateClientRequest createClientRequest)
+        public ActionResult<int> Create([FromBody] CreateClientRequest createClientRequest)
         {
             int res = _clientRepository.Create(
                 new Models.Client
@@ -34,8 +37,10 @@ namespace ClinicService.Controllers
 
 
         [HttpPut("update")]
+        [SwaggerOperation(OperationId = "ClientUpdate")]
+
         //[ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
-        public IActionResult Update([FromBody] UpdateClientRequest updateClientRequest)
+        public ActionResult<int> Update([FromBody] UpdateClientRequest updateClientRequest)
         {
             int res = _clientRepository.Update(
                 new Models.Client
@@ -51,21 +56,27 @@ namespace ClinicService.Controllers
         }
 
         [HttpDelete("delete")]
-        public IActionResult Delete([FromQuery] int clientId)
+        [SwaggerOperation(OperationId = "ClientDelete")]
+
+        public ActionResult<int> Delete([FromQuery] int clientId)
         {
             int res = _clientRepository.Delete(clientId);
             return Ok(res);
         }
 
         [HttpGet("get-all")]
-        public IActionResult GetAll()
+        [SwaggerOperation(OperationId = "ClientGetAll")]
+
+        public ActionResult<List<Client>> GetAll()
         {
             var res = _clientRepository.GetAll();
             return Ok(res);
         }
 
         [HttpGet("get/{clientId}")]
-        public IActionResult GetById(int id)
+        [SwaggerOperation(OperationId = "ClientGetById")]
+
+        public ActionResult<Client> GetById(int id)
         {
             return Ok(_clientRepository.GetById(id));
         }

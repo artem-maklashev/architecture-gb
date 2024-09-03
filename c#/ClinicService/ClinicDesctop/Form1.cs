@@ -1,3 +1,5 @@
+using ClinicServiceNamespace;
+
 namespace ClinicDesctop
 {
     public partial class Form1 : Form
@@ -5,6 +7,47 @@ namespace ClinicDesctop
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void gbButton_Click(object sender, EventArgs e)
+        {
+            ClinicClient clinicClient = new ClinicClient("http://localhost:5033/", new HttpClient());
+            ICollection<Client> clients = clinicClient.ClientGetAllAsync().Result;
+            listViewClients.Items.Clear();
+            foreach (Client client in clients)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = client.ClientId.ToString();
+                item.SubItems.Add(new ListViewItem.ListViewSubItem()
+                {
+                    Text = client.SurName
+                });
+                item.SubItems.Add(new ListViewItem.ListViewSubItem()
+                {
+                    Text = client.FirstName
+                });
+                item.SubItems.Add(new ListViewItem.ListViewSubItem()
+                {
+                    Text = client.Patronymic
+                });
+                listViewClients.Items.Add(item);
+            }
+        }        
+
+        private void btnAddClientClick(object sender, EventArgs e)
+        {
+            ClinicClient clinicClient = new ClinicClient("http://localhost:5033/", new HttpClient());
+            CreateClientRequest client = new CreateClientRequest();
+            client.SurName = textBoxSurName.Text;
+            client.FirstName = textBoxFirstName.Text;
+            client.Patronymic = textBoxPatronymic.Text;
+            client.Document = textBoxDocument.Text;
+            Task<int> result = clinicClient.ClientCreateAsync(client);
+            textBoxSurName.Clear();
+            textBoxFirstName.Clear();
+            textBoxPatronymic.Clear();
+            textBoxDocument.Clear();
+
         }
     }
 }
