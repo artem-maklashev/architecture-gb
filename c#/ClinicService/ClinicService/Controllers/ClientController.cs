@@ -57,12 +57,18 @@ namespace ClinicService.Controllers
 
         [HttpDelete("delete")]
         [SwaggerOperation(OperationId = "ClientDelete")]
-
         public ActionResult<int> Delete([FromQuery] int clientId)
         {
-            int res = _clientRepository.Delete(clientId);
-            return Ok(res);
+            var client = _clientRepository.GetById(clientId);
+            if (client == null)
+            {
+                return NotFound();
+            }
+
+            _clientRepository.Delete(clientId);
+            return Ok(clientId);  
         }
+
 
         [HttpGet("get-all")]
         [SwaggerOperation(OperationId = "ClientGetAll")]
